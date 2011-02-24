@@ -1,10 +1,11 @@
 ﻿using System.Diagnostics;
+using System.Linq.Expressions;
 using NUnit.Framework;
 using System;
 
 namespace Shouldly
 {
-    [DebuggerStepThrough]
+    //[DebuggerStepThrough]
     [ShouldlyMethods]
     public static class ShouldBeTestExtensions
     {
@@ -63,14 +64,18 @@ namespace Shouldly
             actual.AssertAwesomely(Is.LessThan(expected), actual, expected);
         }
 
-        public static void ShouldBeSatisfiedBy<T>(this T actual, Func<T, bool> condition)
+        public static void ShouldBeSatisfiedBy<T>(this T actual, Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            var condition = predicate.Compile();
+            if (!condition(actual))
+                throw new AssertionException(new ShouldlyMessage(predicate.Body).ToString());
         }
 
-        public static void ShouldNotBeSatisfiedBy<T>(this T actual, Func<T, bool> condition)
+        public static void ShouldNotBeSatisfiedBy<T>(this T actual, Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            var condition = predicate.Compile();
+            if (condition(actual))
+                throw new AssertionException(new ShouldlyMessage(predicate.Body).ToString());
         }
     }
 }

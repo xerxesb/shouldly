@@ -24,15 +24,15 @@ namespace Tests
         [Test]
         public void ShouldBeSatsfiedBy_WhenTrue_ShouldNotThrow()
         {
-            true.ShouldBeSatisfiedBy(x => x);
+            true.ShouldBeSatisfiedBy(x => x && x);
         }
 
         [Test]
         public void ShouldBeSatsfiedBy_WhenFalse_ShouldThrow()
         {
             Should.Error(() =>
-            true.ShouldBeSatisfiedBy(x => x),
-            "true should be satisfied by (x=>x) but was not");
+            true.ShouldBeSatisfiedBy(x => x ^ x),
+            "true should be satisfied by (x ^ x) but was not");
         }
 
         [Test]
@@ -45,8 +45,8 @@ namespace Tests
         public void ShouldNotBeSatsfiedBy_WhenFalse_ShouldThrow()
         {
             Should.Error(() =>
-            true.ShouldNotBeSatisfiedBy(x => x),
-            "true should not be satisfied by (x=>x) but was");
+            true.ShouldNotBeSatisfiedBy(x => x || x),
+            "true should not be satisfied by (x || x) but was");
         }
 
 		[Test]
