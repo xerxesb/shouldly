@@ -13,12 +13,22 @@ namespace Shouldly
             actual.AssertAwesomely(Is.EqualTo(expected), actual, expected);
         }
 
-        public static void ShouldBeTypeOf(this object actual, Type expected) 
+        public static void ShouldBeTypeOf<T>(this object actual)
+        {
+            ShouldBeTypeOf(actual, typeof(T));
+        }
+
+        public static void ShouldBeTypeOf(this object actual, Type expected)
         {
             actual.AssertAwesomely(Is.InstanceOf(expected), actual, expected);
         }
 
-        public static void ShouldNotBeTypeOf(this object actual, Type expected) 
+        public static void ShouldNotBeTypeOf<T>(this object actual)
+        {
+            ShouldNotBeTypeOf(actual, typeof(T));
+        }
+
+        public static void ShouldNotBeTypeOf(this object actual, Type expected)
         {
             actual.AssertAwesomely(!Is.InstanceOf(expected), actual, expected);
         }
@@ -51,6 +61,16 @@ namespace Shouldly
         public static void ShouldBeLessThan(this object actual, object expected)
         {
             actual.AssertAwesomely(Is.LessThan(expected), actual, expected);
+        }
+
+        public static void ShouldBeSatisfiedBy<T>(this T actual, Func<T, bool> condition)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void ShouldNotBeSatisfiedBy<T>(this T actual, Func<T, bool> condition)
+        {
+            throw new NotImplementedException();
         }
     }
 }

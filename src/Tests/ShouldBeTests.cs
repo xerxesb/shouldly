@@ -13,8 +13,44 @@ namespace Tests
 			true.ShouldBe(true);
 		}
 
-		[Test]
+        [Test]
 		public void ShouldBe_WhenFalse_ShouldThrow()
+		{
+            Should.Error(() =>
+            true.ShouldBe(false),
+            "true should be False but was True");
+		}
+
+        [Test]
+        public void ShouldBeSatsfiedBy_WhenTrue_ShouldNotThrow()
+        {
+            true.ShouldBeSatisfiedBy(x => x);
+        }
+
+        [Test]
+        public void ShouldBeSatsfiedBy_WhenFalse_ShouldThrow()
+        {
+            Should.Error(() =>
+            true.ShouldBeSatisfiedBy(x => x),
+            "true should be satisfied by (x=>x) but was not");
+        }
+
+        [Test]
+        public void ShouldNotBeSatsfiedBy_WhenTrue_ShouldNotThrow()
+        {
+            true.ShouldNotBeSatisfiedBy(x => !x);
+        }
+
+        [Test]
+        public void ShouldNotBeSatsfiedBy_WhenFalse_ShouldThrow()
+        {
+            Should.Error(() =>
+            true.ShouldNotBeSatisfiedBy(x => x),
+            "true should not be satisfied by (x=>x) but was");
+        }
+
+		[Test]
+		public void ShouldNotBe_WhenTrue_ShouldNotThrow()
 		{
 			"this string".ShouldNotBe("some other string");
 		}
@@ -50,14 +86,31 @@ namespace Tests
 			"Sup yo".ShouldBeTypeOf(typeof(string));
 		}
 
+        [Test]
+        public void ShouldBeTypeOfWithGenericParameter_ShouldNotThrowForStrings()
+        {
+            "Sup yo".ShouldBeTypeOf<string>();
+        }
+
+		[Test]
+		public void ShouldNotBeTypeOf_ShouldNotThrowForNonMatchingType() 
+		{
+			"Sup yo".ShouldNotBeTypeOf(typeof(int));
+		}
+
+        [Test]
+        public void ShouldNotBeTypeOfWithGenericParameter_ShouldNotThrowForNonMatchingTypes()
+        {
+            "Sup yo".ShouldNotBeTypeOf<int>();
+        }
+
 		class MyBase{ }
 		class MyThing : MyBase { }
 
 		[Test]
 		public void ShouldBeTypeOf_ShouldNotThrowForInheritance() 
 		{
-			new MyThing().ShouldBeTypeOf(typeof(MyBase));
+			new MyThing().ShouldBeTypeOf<MyBase>();
 		}
-
 	}
 }
