@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Shouldly;
+using Shouldly.Mocking;
 
 namespace Tests
 {
@@ -19,7 +20,7 @@ namespace Tests
         [Test]
         public void OnShouldHaveBeenCalled_WhenCalled_ShouldPass()
         {
-            var steve = Create.Mock<IZombie>();
+            var steve = RhinoMocksReflectionFacade.GenerateMock<IZombie>();
 
             steve.EatHuman(Direction.North);
 
@@ -29,7 +30,7 @@ namespace Tests
         [Test]
         public void OnShouldHaveBeenCalled_WhenNotCalled_ShouldFailWithOtherCallsShown()
         {
-            var steve = Create.Mock<IZombie>();
+            var steve = RhinoMocksReflectionFacade.GenerateMock<IZombie>();
 
             steve.EatHuman(Direction.East);
             steve.EatHuman(Direction.South);
@@ -48,7 +49,7 @@ namespace Tests
         [Test]
         public void OnShouldHaveBeenCalledWithVaraible_WhenNotCalled_ShouldFailWithOtherCallsShown()
         {
-            var steve = Create.Mock<IZombie>();
+            var steve = RhinoMocksReflectionFacade.GenerateMock<IZombie>();
 
             steve.EatHuman(Direction.East);
             steve.EatHuman(Direction.South);

@@ -1,0 +1,8 @@
+C:\source\Fasterflect\FasterflectTest\bin\Release\FasterflectTest.dll
+C:\source\Fasterflect\FasterflectTest\bin\Release\FasterflectTest.pdb
+C:\source\Fasterflect\FasterflectTest\bin\Release\Fasterflect.dll
+C:\source\Fasterflect\FasterflectTest\bin\Release\Fasterflect.pdb
+C:\source\Fasterflect\FasterflectTest\bin\Release\Fasterflect.xml
+C:\source\Fasterflect\FasterflectTest\obj\Release\ResolveAssemblyReference.cache
+C:\source\Fasterflect\FasterflectTest\obj\Release\FasterflectTest.dll
+C:\source\Fasterflect\FasterflectTest\obj\Release\FasterflectTest.pdb

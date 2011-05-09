@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DifferenceHighlighterHelpersTests.cs" />
+    <Compile Include="Mocking\AssemblyDependentTestFixtureAttribute.cs" />
+    <Compile Include="Mocking\RhinoMocksReflectionFacadeTests.cs" />
     <Compile Include="Should.cs" />
     <Compile Include="ShouldBeDictionaryTests.cs" />
     <Compile Include="ShouldBeEnumerableTests.cs" />

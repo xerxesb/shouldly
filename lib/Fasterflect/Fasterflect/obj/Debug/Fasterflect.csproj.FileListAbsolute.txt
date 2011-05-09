@@ -1,0 +1,5 @@
+C:\source\shouldly\lib\Fasterflect\Fasterflect\bin\Debug\Fasterflect.dll
+C:\source\shouldly\lib\Fasterflect\Fasterflect\bin\Debug\Fasterflect.pdb
+C:\source\shouldly\lib\Fasterflect\Fasterflect\obj\Debug\ResolveAssemblyReference.cache
+C:\source\shouldly\lib\Fasterflect\Fasterflect\obj\Debug\Fasterflect.dll
+C:\source\shouldly\lib\Fasterflect\Fasterflect\obj\Debug\Fasterflect.pdb

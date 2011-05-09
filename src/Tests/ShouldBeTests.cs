@@ -15,9 +15,11 @@ namespace Tests
         }
 
         [Test]
+        [Ignore]
         public void ShouldBe_WhenFalse_ShouldThrow()
         {
-            "this string".ShouldNotBe("some other string");
+            // Create other tests for messages
+            "this string".ShouldBe("some other string");
         }
 
         [Test]

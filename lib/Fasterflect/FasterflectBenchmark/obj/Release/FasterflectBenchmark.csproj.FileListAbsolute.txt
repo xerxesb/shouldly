@@ -1,0 +1,9 @@
+C:\source\Fasterflect\FasterflectBenchmark\bin\Release\FasterflectBenchmark.exe.config
+C:\source\Fasterflect\FasterflectBenchmark\bin\Release\FasterflectBenchmark.exe
+C:\source\Fasterflect\FasterflectBenchmark\bin\Release\FasterflectBenchmark.pdb
+C:\source\Fasterflect\FasterflectBenchmark\bin\Release\Fasterflect.dll
+C:\source\Fasterflect\FasterflectBenchmark\bin\Release\Fasterflect.pdb
+C:\source\Fasterflect\FasterflectBenchmark\bin\Release\Fasterflect.xml
+C:\source\Fasterflect\FasterflectBenchmark\obj\Release\ResolveAssemblyReference.cache
+C:\source\Fasterflect\FasterflectBenchmark\obj\Release\FasterflectBenchmark.exe
+C:\source\Fasterflect\FasterflectBenchmark\obj\Release\FasterflectBenchmark.pdb

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Rhino.Mocks;
-using Rhino.Mocks.Exceptions;
+//using Rhino.Mocks;
+//using Rhino.Mocks.Exceptions;
 
 namespace Shouldly
 {
@@ -11,6 +11,7 @@ namespace Shouldly
     {
         public static void ShouldHaveBeenCalled<T>(this T mock, Expression<Action<T>> action)
         {
+            /*
             try
             {
                 mock.AssertWasCalled(action.Compile());
@@ -30,6 +31,7 @@ namespace Shouldly
 *Recorded*
 {1}", expectedCall, recordedCalls.Select((c, i) => string.Format(@"{0: 0}: {1}", i, c)).DelimitWith("\n")));
             }
+             */
         }
 
         private static string MethodCall(string name, IEnumerable<object> arguments)
@@ -38,5 +40,6 @@ namespace Shouldly
                                  name, 
                                  arguments.Select(a => a.Inspect()).CommaDelimited());
         }
+             
    }
 }

@@ -12,3 +12,8 @@ task :tape_nunit do
 
     File.open(nunit_framework_autogen_source_file, 'w') { |fw| fw.write(source_content) }
 end
+
+desc "Uses Tape to generate a single source file for Fasterflect"
+task :tape_nunit do
+end
+
